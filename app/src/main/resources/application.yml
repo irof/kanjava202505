@@ -1,4 +1,9 @@
+
 management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
   statsd:
     metrics:
       export:

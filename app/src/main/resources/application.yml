@@ -1,0 +1,16 @@
+management:
+  statsd:
+    metrics:
+      export:
+        # datadogで出力しない場合
+        enabled: false
+        # バッファリングせずに送信する
+        buffered: false
+logging:
+  level:
+    dev.irof.kanjava:
+      UdpReceiver: debug
+irof:
+  udp-receiver:
+    enabled: true
+    port: 8125

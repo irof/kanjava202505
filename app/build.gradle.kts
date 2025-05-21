@@ -1,7 +1,10 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
     java
     id("org.springframework.boot") version "3.4.5"
 }
+
 
 repositories {
     mavenCentral()
@@ -9,7 +12,7 @@ repositories {
 
 dependencies {
     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
-    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
     runtimeOnly("io.micrometer:micrometer-registry-statsd")
@@ -28,3 +31,8 @@ java {
 tasks.named<Test>("test") {
     useJUnitPlatform()
 }
+
+tasks.named<BootBuildImage>("bootBuildImage") {
+    environment.put("BP_DATADOG_ENABLED", "t")
+}
+

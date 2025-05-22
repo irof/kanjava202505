@@ -21,3 +21,7 @@ irof:
   udp-receiver:
     enabled: true
     port: 8125
+server:
+  tomcat:
+    mbeanregistry:
+      enabled: true

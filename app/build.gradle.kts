@@ -15,6 +15,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
+    runtimeOnly("io.micrometer:micrometer-tracing-bridge-otel")
+
     runtimeOnly("io.micrometer:micrometer-registry-statsd")
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
     runtimeOnly("io.micrometer:micrometer-registry-otlp")

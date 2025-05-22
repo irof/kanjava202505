@@ -30,7 +30,7 @@ public class UdpReceiver implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws IOException {
-        // management.statsd.metrics.export.max-packet-length
+        // 送信側でバッファリングされる場合 management.statsd.metrics.export.max-packet-length がMAXなのでそれ以上にする
         byte[] buffer = new byte[1400];
 
         try (DatagramSocket socket = new DatagramSocket(port)) {

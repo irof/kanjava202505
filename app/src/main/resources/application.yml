@@ -1,4 +1,3 @@
-
 management:
   endpoints:
     web:
@@ -7,10 +6,13 @@ management:
   statsd:
     metrics:
       export:
-        # datadogで出力しない場合
         enabled: false
-        # バッファリングせずに送信する
-        buffered: false
+        # バッファリングせずに送信したい場合に指定
+        #buffered: false
+  otlp:
+    metrics:
+      export:
+        enabled: false
 logging:
   level:
     dev.irof.kanjava:

@@ -17,6 +17,10 @@ logging:
   level:
     dev.irof.kanjava:
       UdpReceiver: debug
+  structured:
+    format:
+      # ログをJSONで出す。トレースIDなどが載っていることを確認できる。
+      console: logstash
 irof:
   udp-receiver:
     enabled: true

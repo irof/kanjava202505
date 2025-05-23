@@ -17,7 +17,7 @@ public class MyController {
         this.myClient = myClient;
     }
 
-    @GetMapping({"", "get"})
+    @GetMapping("get")
     void get(@RequestHeader Map<String, String> headers) {
         logger.info("get(): {}", headers);
     }
@@ -27,6 +27,9 @@ public class MyController {
         logger.info("post()");
     }
 
+    /**
+     * 自分の /get をHTTP経由で呼び出すことでコンテキスト伝播とかトレースを見るためのエンドポイントです
+     */
     @GetMapping("call-get")
     void callGet() {
         logger.info("callGet()");
